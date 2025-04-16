@@ -18,6 +18,7 @@ export interface WebSearchState {
   maxResults: number
   // 要排除的域名列表
   excludeDomains: string[]
+  // 订阅源列表
   subscribeSources: SubscribeSource[]
   // 是否启用搜索增强模式
   enhanceMode: boolean
@@ -63,7 +64,7 @@ const initialState: WebSearchState = {
   maxResults: 5,
   excludeDomains: [],
   subscribeSources: [],
-  enhanceMode: false,
+  enhanceMode: true,
   overwrite: false
 }
 
