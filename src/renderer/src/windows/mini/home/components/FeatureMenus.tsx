@@ -53,9 +53,36 @@ export interface FeatureMenusRef {
 
 // 模拟的自定义操作数据 (最终需要从配置或 IPC 获取)
 const mockCustomActions: CustomAction[] = [
-  { id: '1', emoji: '📝', name: '写周报', prompt: '请根据以下内容帮我生成一份周报：\n\n【holderplace】' },
-  { id: '2', emoji: '💡', name: '提取要点', prompt: '请提取以下文本的关键信息和要点：\n\n【holderplace】' },
-  { id: '3', emoji: '📧', name: '写邮件', prompt: '请根据以下信息帮我草拟一封邮件：\n\n【holderplace】' }
+  { id: '1', emoji: '📝', name: '格式化为JSON', prompt: `Act as a natural language processing software. Analyze the given text and return me only a parsable and minified JSON object.
+
+
+Here's the JSON Object structure:
+{
+  "key1": /* Some instructions */,
+  "key2": /* Some instructions */,
+}
+
+Here are the rules you must follow:
+- You MUST return a valid, parsable JSON object.
+- More rules…
+
+Here are some examples to help you out:
+- Example 1…
+- Example 2…
+
+Text: 【holderplace】
+
+JSON Data:\n\n` },
+  { id: '2', emoji: '💡', name: '正则生成', prompt: `Generate a regular expression that match the specific patterns in the text. Return the regular expression in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Then, give clear and understandable explanations on what the regex is doing and how it is constructed.
+
+Text: 【holderplace】
+
+Regex:` },
+  { id: '3', emoji: '📧', name: 'DEBUG代码生成', prompt: `Act as a software engineer debugging its code. Add debug statements to the code. Add as many as necessary to make debugging easier.
+
+Code: 【holderplace】
+
+Debugged code:` }
 ]
 
 const FeatureMenus = ({
